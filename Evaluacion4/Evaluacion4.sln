@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaluacion4", "Evaluacion4\Evaluacion4.csproj", "{ADAE3674-DCD7-44E2-A3FA-BDA6F76A3E7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaluacion4DAL", "Evaluacion4DAL\Evaluacion4DAL.csproj", "{DBFE20F2-5680-4ABF-AF74-6B3A2C364954}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADAE3674-DCD7-44E2-A3FA-BDA6F76A3E7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADAE3674-DCD7-44E2-A3FA-BDA6F76A3E7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADAE3674-DCD7-44E2-A3FA-BDA6F76A3E7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADAE3674-DCD7-44E2-A3FA-BDA6F76A3E7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBFE20F2-5680-4ABF-AF74-6B3A2C364954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBFE20F2-5680-4ABF-AF74-6B3A2C364954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBFE20F2-5680-4ABF-AF74-6B3A2C364954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBFE20F2-5680-4ABF-AF74-6B3A2C364954}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E948C0F-53E0-477C-A22B-AFF49E953D6B}
+	EndGlobalSection
+EndGlobal

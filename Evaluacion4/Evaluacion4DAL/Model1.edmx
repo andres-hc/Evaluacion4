@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Evaluacion4BDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EstacionServicio">
+          <Key>
+            <PropertyRef Name="IdEstacion" />
+          </Key>
+          <Property Name="IdEstacion" Type="int" Nullable="false" />
+          <Property Name="Capacidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PuntoCarga">
+          <Key>
+            <PropertyRef Name="IdPunto" />
+          </Key>
+          <Property Name="IdPunto" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+          <Property Name="Capacidad" Type="int" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="fk_punto_tipo">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+          <End Role="PuntoCarga" Type="Self.PuntoCarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="PuntoCarga">
+              <PropertyRef Name="Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Evaluacion4BDModelStoreContainer">
+          <EntitySet Name="EstacionServicio" EntityType="Self.EstacionServicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PuntoCarga" EntityType="Self.PuntoCarga" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_punto_tipo" Association="Self.fk_punto_tipo">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="PuntoCarga" EntitySet="PuntoCarga" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Evaluacion4BDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EstacionServicio">
+          <Key>
+            <PropertyRef Name="IdEstacion" />
+          </Key>
+          <Property Name="IdEstacion" Type="Int32" Nullable="false" />
+          <Property Name="Capacidad" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PuntoCarga">
+          <Key>
+            <PropertyRef Name="IdPunto" />
+          </Key>
+          <Property Name="IdPunto" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Capacidad" Type="Int32" Nullable="false" />
+          <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Tipo1" Relationship="Self.fk_punto_tipo" FromRole="PuntoCarga" ToRole="Tipo" />
+        </EntityType>
+        <EntityType Name="Tipo">
+          <Key>
+            <PropertyRef Name="IdTipo" />
+          </Key>
+          <Property Name="IdTipo" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PuntoCarga" Relationship="Self.fk_punto_tipo" FromRole="Tipo" ToRole="PuntoCarga" />
+        </EntityType>
+        <Association Name="fk_punto_tipo">
+          <End Role="Tipo" Type="Self.Tipo" Multiplicity="1" />
+          <End Role="PuntoCarga" Type="Self.PuntoCarga" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipo">
+              <PropertyRef Name="IdTipo" />
+            </Principal>
+            <Dependent Role="PuntoCarga">
+              <PropertyRef Name="Tipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Evaluacion4BDEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EstacionServicio" EntityType="Self.EstacionServicio" />
+          <EntitySet Name="PuntoCarga" EntityType="Self.PuntoCarga" />
+          <EntitySet Name="Tipo" EntityType="Self.Tipo" />
+          <AssociationSet Name="fk_punto_tipo" Association="Self.fk_punto_tipo">
+            <End Role="Tipo" EntitySet="Tipo" />
+            <End Role="PuntoCarga" EntitySet="PuntoCarga" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Evaluacion4BDModelStoreContainer" CdmEntityContainer="Evaluacion4BDEntities1">
+          <EntitySetMapping Name="EstacionServicio">
+            <EntityTypeMapping TypeName="Evaluacion4BDModel.EstacionServicio">
+              <MappingFragment StoreEntitySet="EstacionServicio">
+                <ScalarProperty Name="IdEstacion" ColumnName="IdEstacion" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuntoCarga">
+            <EntityTypeMapping TypeName="Evaluacion4BDModel.PuntoCarga">
+              <MappingFragment StoreEntitySet="PuntoCarga">
+                <ScalarProperty Name="IdPunto" ColumnName="IdPunto" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Capacidad" ColumnName="Capacidad" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo">
+            <EntityTypeMapping TypeName="Evaluacion4BDModel.Tipo">
+              <MappingFragment StoreEntitySet="Tipo">
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
