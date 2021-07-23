@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Evaluacion4DAL
+namespace EstacionesServicioDAL
 {
     using System;
     using System.Collections.Generic;

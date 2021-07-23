@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Evaluacion4DAL
+namespace EstacionesServicioDAL
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Evaluacion4BDEntities1 : DbContext
+    public partial class EstacionesServicioBDEntities : DbContext
     {
-        public Evaluacion4BDEntities1()
-            : base("name=Evaluacion4BDEntities1")
+        public EstacionesServicioBDEntities()
+            : base("name=EstacionesServicioBDEntities")
         {
         }
     

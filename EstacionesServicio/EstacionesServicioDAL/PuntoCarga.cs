@@ -7,14 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Evaluacion4DAL
+namespace EstacionesServicioDAL
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class EstacionServicio
+    public partial class PuntoCarga
     {
-        public int IdEstacion { get; set; }
+        public int IdPunto { get; set; }
+        public int Tipo { get; set; }
         public int Capacidad { get; set; }
+        public System.DateTime FechaVencimiento { get; set; }
+    
+        public virtual Tipo Tipo1 { get; set; }
     }
 }
