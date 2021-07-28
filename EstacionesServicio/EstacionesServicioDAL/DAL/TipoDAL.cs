@@ -9,7 +9,7 @@ namespace EstacionesServicioDAL.DAL
     public class TipoDAL
     {
 
-        EstacionesServicioBDEntities dbEntities = new EstacionesServicioBDEntities();
+        public EstacionesServicioBDEntities dbEntities = new EstacionesServicioBDEntities();
 
         public List<Tipo> GetAll()
         {

@@ -9,8 +9,7 @@ namespace EstacionesServicioDAL.DAL
     public class PuntoCargaDAL
     {
 
-        EstacionesServicioBDEntities dbEntities = new EstacionesServicioBDEntities();
-        PuntoCargaDAL puntoCargaDAL = new PuntoCargaDAL();
+        public EstacionesServicioBDEntities dbEntities = new EstacionesServicioBDEntities();
 
         public void Add(PuntoCarga p)
         {
@@ -23,23 +22,26 @@ namespace EstacionesServicioDAL.DAL
             return dbEntities.PuntoCarga.ToList();
         }
 
-        //buscar puntos por id
+        public List<PuntoCarga> GetAll(int tipo)
+        {
+            var query = from p in dbEntities.PuntoCarga
+                        where p.Tipo == tipo
+                        select p;
+            return query.ToList();
+        }
+
+        //buscar punto
         public PuntoCarga buscarPunto(int idPunto)
         {
             return dbEntities.PuntoCarga.Find(idPunto);
         }
 
-        //Filtrar por tipo
-        public List<PuntoCarga> GetAll(int tipo)
+        //actualizar punto
+        public int actualizarPunto(PuntoCarga nuevoPto)
         {
-            //LINQ
-            var query = from c in dbEntities.PuntoCarga
-                        where c.Tipo == tipo
-                        select c;
-            return query.ToList();
-
+            PuntoCarga p = dbEntities.PuntoCarga.Find(nuevoPto.IdPunto);
+            p = nuevoPto;
+            return dbEntities.SaveChanges();
         }
-
-        
     }
 }

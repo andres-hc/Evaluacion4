@@ -11,6 +11,8 @@ namespace EstacionesServicio
 {
     public partial class IngresarPunto : System.Web.UI.Page
     {
+        PuntoCargaDAL puntocargaDAL = new PuntoCargaDAL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -32,15 +34,24 @@ namespace EstacionesServicio
                 int tipo = Convert.ToInt32(tipoDdw.SelectedValue);
                 DateTime fecha = Convert.ToDateTime(fechaTxt.Text);
 
-                PuntoCarga punto = new PuntoCarga();
-                punto.IdPunto = id;
-                punto.Capacidad = capacidad;
-                punto.Tipo = tipo;
-                punto.FechaVencimiento = fecha;
+                if(puntocargaDAL.buscarPunto(id) == null)
+                {
+                    PuntoCarga punto = new PuntoCarga();
+                    punto.IdPunto = id;
+                    punto.Capacidad = capacidad;
+                    punto.Tipo = tipo;
+                    punto.FechaVencimiento = fecha;
 
-                new PuntoCargaDAL().Add(punto);
+                    new PuntoCargaDAL().Add(punto);
 
-                confirmacion.Text = "Registro ingresado correctamente.";
+                    confirmacion.Text = "Registro ingresado correctamente.";
+                }
+                else
+                {
+                    confirmacion.Text = "ID ya existe, reingrese";
+                }
+
+                
 
             }
         }

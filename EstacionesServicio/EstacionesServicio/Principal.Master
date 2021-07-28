@@ -30,10 +30,6 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="IngresarEstacion.aspx">Ingresar Estaciones</a></li>
                                 <li><a class="dropdown-item" href="MostrarEstaciones.aspx">Mostrar Estaciones</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Editar Estaciones</a></li>
                             </ul>
                         </li>
                         <%-- Puntos de Carga --%>
@@ -47,7 +43,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Editar Puntos</a></li>
+                                <li><a class="dropdown-item" href="EditarPuntos.aspx">Editar Puntos</a></li>
                             </ul>
                         </li>
                     </ul>

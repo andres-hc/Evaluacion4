@@ -75,9 +75,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="EditarPuntos.aspx" />
     <Content Include="IngresarEstacion.aspx" />
     <Content Include="IngresarPunto.aspx" />
     <Content Include="MostrarEstaciones.aspx" />
+    <Content Include="MostrarPuntos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +89,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPuntos.aspx.cs">
+      <DependentUpon>EditarPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPuntos.aspx.designer.cs">
+      <DependentUpon>EditarPuntos.aspx</DependentUpon>
     </Compile>
     <Compile Include="IngresarEstacion.aspx.cs">
       <DependentUpon>IngresarEstacion.aspx</DependentUpon>
@@ -108,6 +117,13 @@
     </Compile>
     <Compile Include="MostrarEstaciones.aspx.designer.cs">
       <DependentUpon>MostrarEstaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MostrarPuntos.aspx.cs">
+      <DependentUpon>MostrarPuntos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarPuntos.aspx.designer.cs">
+      <DependentUpon>MostrarPuntos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Principal.Master.cs">
       <DependentUpon>Principal.Master</DependentUpon>
