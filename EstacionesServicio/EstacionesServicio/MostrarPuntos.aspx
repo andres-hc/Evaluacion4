@@ -24,12 +24,19 @@
             </div>
 
             <div class="mt-5">
-                <asp:GridView ID="puntosGrid" runat="server" AutoGenerateColumns="false" EmptyDataText="Aun no se han ingresado Puntos de Carga" CssClass="table table-hover">
+                <asp:GridView ID="puntosGrid" runat="server" AutoGenerateColumns="false" EmptyDataText="Aun no se han ingresado Puntos de Carga" CssClass="table table-hover" OnRowCommand="puntosGrid_RowCommand">
                     <Columns>
                         <asp:BoundField HeaderText="IdPunto" DataField="IdPunto" />
-                        <asp:BoundField HeaderText="Tipo" DataField="Tipo" />
+                        <asp:BoundField HeaderText="Tipo" DataField="TipoTxt" />
                         <asp:BoundField HeaderText="Capacidad" DataField="Capacidad" />
                         <asp:BoundField HeaderText="Fecha Vencimiento" DataField="FechaVencimiento" DataFormatString="{0:dd/MM/yyyy}" />
+                        <asp:TemplateField HeaderText="Eliminar">
+                            <ItemTemplate>
+                                <asp:Button runat="server" Text="ELIMINAR"
+                                    CssClass="btn btn-danger" CommandName="eliminar"
+                                    CommandArgument='<%# Eval("IdPunto") %>' />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
             </div>

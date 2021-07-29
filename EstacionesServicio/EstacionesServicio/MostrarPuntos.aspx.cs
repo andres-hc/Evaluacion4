@@ -40,5 +40,15 @@ namespace EstacionesServicio
                 CargarTabla(filtro);
             }
         }
+
+        protected void puntosGrid_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if(e.CommandName == "eliminar")
+            {
+                string idEliminar = e.CommandArgument.ToString();
+                puntoCargaDAL.Remove(Convert.ToInt32(idEliminar));
+                CargarTabla(puntoCargaDAL.GetAll());
+            }
+        }
     }
 }

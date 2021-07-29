@@ -19,11 +19,14 @@
                 </div>
 
                 <div class="form-group">
-                    <asp:Button ID="registrarEstacion" runat="server" class="btn btn-primary" OnClick="registrarEstacion_Click" Text="Registrar"/>
+                    <asp:Button ID="registrarEstacion" runat="server" class="btn btn-outline-primary" OnClick="registrarEstacion_Click" Text="Registrar"/>
                 </div>
                 <br />
                 <div>
                     <asp:Label ID="confirmacion" runat="server" CssClass="text-success"></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="confirmacionneg" runat="server" CssClass="text-danger"></asp:Label>
                 </div>
             </div>
         </div>

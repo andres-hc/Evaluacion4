@@ -39,7 +39,7 @@ namespace EstacionesServicio
                 }
                 else
                 {
-                    confirmacion.Text = "ID ya existe, por favor reingrese";
+                    confirmacionneg.Text = "ID ya existe, por favor reingrese";
                 }
 
                 

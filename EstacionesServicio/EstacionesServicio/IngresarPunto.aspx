@@ -31,10 +31,13 @@
                 </div>
                 <br />
 
-                <asp:Button ID="registrarPtoBtn" runat="server" Text="Registrar" CssClass="btn btn-primary" OnClick="registrarPtoBtn_Click" />
+                <asp:Button ID="registrarPtoBtn" runat="server" Text="Registrar" CssClass="btn btn-outline-primary" OnClick="registrarPtoBtn_Click" />
                 <br />
                 <div>
                     <asp:Label ID="confirmacion" runat="server" CssClass="text-success"></asp:Label>
+                </div>
+                <div>
+                    <asp:Label ID="confirmacionneg" runat="server" CssClass="text-danger"></asp:Label>
                 </div>
 
             </div>

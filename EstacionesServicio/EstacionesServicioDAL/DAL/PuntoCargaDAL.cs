@@ -43,5 +43,12 @@ namespace EstacionesServicioDAL.DAL
             p = nuevoPto;
             return dbEntities.SaveChanges();
         }
+
+        public void Remove(int idPunto)
+        {
+            PuntoCarga pc = dbEntities.PuntoCarga.Find(idPunto);
+            dbEntities.PuntoCarga.Remove(pc);
+            dbEntities.SaveChanges();
+        }
     }
 }

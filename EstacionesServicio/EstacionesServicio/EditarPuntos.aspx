@@ -33,7 +33,7 @@
                         <asp:TextBox ID="fechaTxt" CssClass="form-control" type="date" runat="server" required></asp:TextBox>
                     </div>
                     <br />
-                    <asp:Button ID="editarPtoBtn" runat="server" Text="Editar" CssClass="btn btn-primary" OnClick="editarPtoBtn_Click" />
+                    <asp:Button ID="editarPtoBtn" runat="server" Text="Editar" CssClass="btn btn-outline-primary" OnClick="editarPtoBtn_Click" />
                     <br />
                     <div>
                         <asp:Label ID="confirmacion" runat="server" CssClass="text-success"></asp:Label>
