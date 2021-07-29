@@ -11,7 +11,7 @@
 
                 <div class="form-group">
                     <label for="idDdw">Seleccione ID a Editar</label>
-                    <asp:DropDownList ID="idDdw" CssClass="form-control" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="idDdw" CssClass="form-control" runat="server" required></asp:DropDownList>
                 </div>
             </div>
         </div>
@@ -37,6 +37,9 @@
                     <br />
                     <div>
                         <asp:Label ID="confirmacion" runat="server" CssClass="text-success"></asp:Label>
+                    </div>
+                    <div>
+                        <asp:Label ID="confirmacionneg" runat="server" CssClass="text-danger"></asp:Label>
                     </div>
                 </div>
             </div>

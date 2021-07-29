@@ -19,7 +19,7 @@
                     <asp:ListItem Value="" Selected="True" Text="Todos"></asp:ListItem>
                     <asp:ListItem Value="1" Text="Gasolina"></asp:ListItem>
                     <asp:ListItem Value="2" Text="Electrico"></asp:ListItem>
-                    <asp:ListItem Value="3" Text="Hibrido"></asp:ListItem>
+                    <asp:ListItem Value="3" Text="Dual"></asp:ListItem>
                 </asp:DropDownList>
             </div>
 

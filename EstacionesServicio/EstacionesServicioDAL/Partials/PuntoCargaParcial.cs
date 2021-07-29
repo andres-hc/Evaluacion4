@@ -20,7 +20,7 @@ namespace EstacionesServicioDAL
                         break;
                     case 2: texto = "Electrico";
                         break;
-                    case 3: texto = "Hibrido";
+                    case 3: texto = "Dual";
                         break;
                 }
 

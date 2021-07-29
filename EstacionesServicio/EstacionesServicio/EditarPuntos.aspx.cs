@@ -13,7 +13,7 @@ namespace EstacionesServicio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
             if (!IsPostBack)
             {
@@ -46,7 +46,6 @@ namespace EstacionesServicio
 
 
                 PuntoCarga p = puntoCarga.buscarPunto(id);
-
                 p.Tipo = tipo;
                 p.Capacidad = capacidad;
                 p.FechaVencimiento = fecha;
@@ -54,6 +53,7 @@ namespace EstacionesServicio
                 puntoCarga.actualizarPunto(p);
 
                 confirmacion.Text = "Edicion correcta.";
+
 
             }
         }
